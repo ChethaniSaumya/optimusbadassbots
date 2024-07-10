@@ -1,0 +1,1665 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: radial-gradient(circle farthest-side at 50% 100%, rgba(1, 9, 18, 0),
+      rgba(1, 6, 14, 0.6) 36%,
+      rgba(1, 14, 29, 0.6) 55%,
+      rgba(49, 18, 93, 0.4));
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1001; /* Ensure the content is above the overlay */
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+/* Define the fade-in and fade-out animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  #mainT {
+    font-size: 40px;
+  }
+
+  .mintDetails {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-flow: column nowrap;
+  }
+  
+  #subCon {
+    font-size: 20px;
+  }
+
+  .gradient-button-sub {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 18px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+    margin-bottom: 10px;
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button-sub:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+
+  .gradient-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 18px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+    margin-bottom: 10px;
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+  
+  .othersT {
+    font-size: 16px;
+  }
+  
+  .others {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+    text-shadow: 0 0 10px #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: fit-content;
+    text-align: center;
+    padding: 5px 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;margin-bottom: 10px;
+  }
+  
+  #amountSol {
+    rotate: -4deg;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  #tickerMob {
+    margin-bottom: 30px;
+  }
+
+  #subCon {
+    font-size: 20px;
+  }
+
+  #tickerPC {
+    display: none;
+  }
+
+  .ticker2 {
+    margin-top: -40px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* example: override wallet button style */
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #707070;
+  }
+
+  #subP {
+    font-size: 14px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .me {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .me:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    width: 70px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+
+  }
+
+
+  /* Ensure the footer container has overflow hidden */
+  .footer-container {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    position: relative;
+    rotate: -4deg;
+  }
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track2 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  /*...................TRACK 2..................*/
+
+
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track3 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  #rBtn {
+    rotate: -4deg;
+  }
+
+
+  #tSupply {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.521);
+    flex-flow: column nowrap;
+    text-align: center;
+    text-align: center;
+    margin-left: 8px;
+  }
+
+  #price {
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+
+  #mainT {
+    font-size: 40px;
+  }
+
+  .gradient-button-sub {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 18px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+    margin-bottom: 10px;
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button-sub:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+
+
+  .mintDetails {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-flow: column nowrap;
+  }
+  
+  #subCon {
+    font-size: 20px;
+  }
+
+  .gradient-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 18px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+    margin-bottom: 10px;
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+  
+  .othersT {
+    font-size: 16px;
+  }
+  
+  .others {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+    text-shadow: 0 0 10px #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: fit-content;
+    text-align: center;
+    padding: 5px 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;margin-bottom: 10px;
+  }
+  
+  #amountSol {
+    rotate: -4deg;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  #tickerPC {
+    display: none;
+  }
+
+  #tickerMob {
+    margin-bottom: 30px;
+  }
+
+  .ticker2 {
+    margin-top: -40px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* example: override wallet button style */
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #707070;
+  }
+
+  #subP {
+    font-size: 14px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .me {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .me:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    width: 70px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+
+  }
+
+
+  /* Ensure the footer container has overflow hidden */
+  .footer-container {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    position: relative;
+    rotate: -4deg;
+  }
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track2 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  /*...................TRACK 2..................*/
+
+
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track3 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  #rBtn {
+    rotate: -4deg;
+  }
+
+  #tSupply {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.521);
+    flex-flow: column nowrap;
+    text-align: center;
+    text-align: center;
+    margin-left: 8px;
+  }
+
+  #price {
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .mintDetails {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  
+  #mainT {
+    font-size: 45px;
+  }
+
+  .gradient-button-sub {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    width: fit-content;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button-sub:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+
+  .gradient-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 18px;
+    width: fit-content;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+  
+  .othersT {
+    font-size: 16px;
+  }
+  
+  .others {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+    text-shadow: 0 0 10px #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 200px;
+    text-align: center;
+    padding: 5px 10px;
+  
+  }
+  
+  #amountSol {
+    rotate: -4deg;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+  #subCon {
+    font-size: 30px;
+  }
+
+  .ticker2 {
+    margin-top: -40px;
+    width: 100%;
+  }
+
+  #tickerMob {
+    display: none;
+  }
+
+  #tickerPC {
+    margin-bottom: 25px;
+  }
+
+  /* example: override wallet button style */
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #707070;
+  }
+
+  #subP {
+    font-size: 14px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .me {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .me:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    width: 70px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+
+  }
+
+
+  /* Ensure the footer container has overflow hidden */
+  .footer-container {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    position: relative;
+    rotate: -4deg;
+  }
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track2 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  /*...................TRACK 2..................*/
+
+
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track3 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  #rBtn {
+    rotate: -4deg;
+  }
+
+  #tSupply {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.521);
+    flex-flow: column nowrap;
+    text-align: center;
+    text-align: center;
+    margin-left: 8px;
+  }
+
+  #price {
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  #tickerMob {
+    display: none;
+  }
+  .mintDetails {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .gradient-button-sub {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    width: fit-content;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+
+  .gradient-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 25px;
+    width: 300px;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+  
+  .othersT {
+    font-size: 20px;
+  }
+  
+  .others {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 25px;
+    text-shadow: 0 0 10px #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 300px;
+    text-align: center;
+    padding: 10px 20px;
+  
+  }
+  
+  #amountSol {
+    rotate: -4deg;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+  .ticker2 {
+    margin-top: -40px;
+    width: 100%;
+  }
+
+  /* example: override wallet button style */
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #707070;
+  }
+
+  #subP {
+    font-size: 14px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+
+  .me {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .me:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    width: 70px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+
+  }
+
+
+  /* Ensure the footer container has overflow hidden */
+  .footer-container {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    position: relative;
+    rotate: -4deg;
+  }
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track2 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  /*...................TRACK 2..................*/
+
+
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track3 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  #rBtn {
+    rotate: -4deg;
+  }
+
+  #tSupply {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.521);
+    flex-flow: column nowrap;
+    text-align: center;
+    text-align: center;
+    margin-left: 8px;
+  }
+
+  #price {
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+  .mintDetails {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    z-index: 1000000000000000;
+    position: relative;
+  }
+
+  .mintDetailsMain{
+    width: 100%;
+    z-index: 100000;
+    position: relative;
+  }
+
+  .gradient-button-sub {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 25px;
+    width: fit-content;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button-sub:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+
+  .gradient-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 25px;
+    width: 410px;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+  
+  .othersT {
+    font-size: 20px;
+  }
+  
+  .others {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 25px;
+    text-shadow: 0 0 10px #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 410px;
+    text-align: center;
+    padding: 10px 20px;
+  
+  }
+  
+  #amountSol {
+    rotate: -4deg;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  .ticker2 {
+    margin-top: -40px;
+    width: 100%;
+  }
+
+  #tickerMob {
+    display: none;
+  }
+
+  /* example: override wallet button style */
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #707070;
+  }
+
+  #subP {
+    font-size: 14px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+
+  .me {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .me:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    width: 70px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+
+  }
+
+
+  /* Ensure the footer container has overflow hidden */
+  .footer-container {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    position: relative;
+    rotate: -4deg;
+  }
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track2 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  /*...................TRACK 2..................*/
+
+
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track3 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  #rBtn {
+    rotate: -4deg;
+  }
+
+
+  #tSupply {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.521);
+    flex-flow: column nowrap;
+    text-align: center;
+    text-align: center;
+    margin-left: 8px;
+  }
+
+  #price {
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .mintDetails {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .gradient-button-sub {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 35px;
+    width: fit-content;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button-sub:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+
+  .gradient-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+    font-size: 35px;
+    width: 580px;
+    animation: fadeInOut 4s infinite; /* Apply the fade-in-out animation */
+  
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+  
+  }
+  
+  /* Optionally, add a hover effect to make the button more interactive */
+  .gradient-button:hover {
+     text-shadow: 0 0 10px #FFFFFF;
+    color: white;
+    background: rgb(107, 93, 229);
+    background: linear-gradient(175deg, rgba(107, 93, 229, 1) 0%, rgba(119, 90, 229, 1) 21%, rgba(127, 47, 224, 1) 51%, rgba(195, 69, 227, 1) 100%);
+  }
+  
+  
+  .othersT {
+    font-size: 25px;
+  }
+  
+  .others {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 35px;
+    text-shadow: 0 0 10px #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 580px;
+    text-align: center;
+    padding: 10px 20px;
+  
+  }
+  
+  #amountSol {
+    rotate: -4deg;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  #mainT {
+    font-size: 100px;
+  }
+
+  #subCon {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  #tickerMob {
+    display: none;
+  }
+
+  .ticker2 {
+    margin-top: -40px;
+    width: 100%;
+  }
+
+  /* example: override wallet button style */
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #707070;
+  }
+
+  #subP {
+    font-size: 22px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+
+  #mintNFT {
+    font-size: 40px;
+  }
+
+  .me {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform .3s;
+  }
+
+  .me:hover {
+    transform: scale(1.1);
+  }
+
+  .logo {
+    width: 110px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(180, 57, 252, 0.404), 0 0 20px rgba(108, 11, 187, 0.384), 0 0 30px rgba(108, 11, 187, 0.315);
+
+  }
+
+
+  /* Ensure the footer container has overflow hidden */
+  .footer-container {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    position: relative;
+    rotate: -4deg;
+  }
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track2 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scroll 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+
+  /*...................TRACK 2..................*/
+
+
+
+  .slider {
+    width: 100vw;
+    /* Constrain width to viewport width */
+    overflow: hidden;
+    display: flex;
+  }
+
+  .slide-track3 {
+    display: flex;
+    width: calc(250px * 16);
+    /* Adjust as needed */
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .slide {
+    min-width: 250px;
+    /* Adjust to match the width of the images */
+    flex-shrink: 0;
+  }
+
+  .carouselIMG {
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 8));
+    }
+
+    /* Adjust as needed */
+  }
+
+
+  #rBtn {
+    rotate: -4deg;
+  }
+
+  #tSupply {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.521);
+    flex-flow: column nowrap;
+    text-align: center;
+    text-align: center;
+    margin-left: 8px;
+  }
+
+  #price {
+    font-size: 35px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+    margin-top: 10px
+  }
+}
