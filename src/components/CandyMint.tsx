@@ -92,8 +92,8 @@ export const CandyMint: FC = () => {
         <div className="mintDetails">
             {showMintOptions ? (
                 <>
-                    <button className='gradient-button-sub' onClick={onClickToken}>Mint with $OPT</button>
-                    <button className='gradient-button-sub' onClick={onClick}>Mint with SOL</button>
+                    <button className='gradient-button-sub'>Mint with $OPT</button>
+                    <button className='gradient-button-sub'>Mint with SOL</button>
                 </>
             ) : (
                 <button className='gradient-button' onClick={handleMintClick}>Mint NFT</button>
